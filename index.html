@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romm Convent · Rent &amp; Resale Selection for Mr. Eric Zijdenbos · Nexspace Realty</title>
+<meta name="description" content="A private selection of two rentals and two freehold resale residences at Romm Convent, Silom, Bangkok. Prepared by Nexspace Realty, 24 November 2026.">
+<meta property="og:title" content="Romm Convent · Private Selection for Mr. Eric Zijdenbos">
+<meta property="og:description" content="Two fully furnished rentals and two freehold resale residences at Romm Convent, opposite BNH Hospital. Nexspace Realty Exclusive.">
+<meta property="og:image" content="sky-retreat.jpg">
+<meta name="theme-color" content="#1F2A24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --ink:#1F2A24; --cream:#F5F1EA; --sand:#ECE5D8; --card:#FBF9F4; --line:#DDD3C1;
+  --body:#3D4A43; --muted:#5C665F; --brass:#7A5C2E; --brass-light:#C9A66B; --on-dark:#C9D2CC;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--ink)}
+body{font-family:'Jost','Avenir Next',Arial,sans-serif;font-weight:300;letter-spacing:.02em;color:var(--body);-webkit-font-smoothing:antialiased;overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:rgba(31,42,36,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#F5F1EA}
+.bar .brand{font-size:13px;font-weight:400;letter-spacing:.04em;line-height:1.3}
+.bar .brand b{display:block;font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--brass-light)}
+.line-btn{flex:none;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;color:#1F2A24;background:var(--brass-light);border-radius:6px;padding:8px 12px;white-space:nowrap}
+
+/* book */
+.book{display:flex;height:100vh;height:100dvh;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.book::-webkit-scrollbar{display:none}
+.page{flex:0 0 100%;width:100%;height:100%;overflow-y:auto;scroll-snap-align:start;scroll-snap-stop:always;background:var(--cream);
+  padding:calc(78px + env(safe-area-inset-top)) 0 calc(96px + env(safe-area-inset-bottom));overscroll-behavior-y:contain}
+.page.dark{background:var(--ink);color:var(--on-dark)}
+.page.sand{background:var(--sand)}
+.inner{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* type */
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:0 0 12px}
+.dark .eyebrow{color:var(--brass-light)}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:0;color:var(--ink);margin:0}
+h1{font-size:clamp(46px,12vw,92px);line-height:1}
+h2{font-size:clamp(32px,8.4vw,54px);line-height:1.08;margin-bottom:20px}
+.dark h1,.dark h2{color:#F5F1EA}
+h3{font-size:17px;font-weight:500;color:var(--ink);margin:0 0 6px;letter-spacing:.02em}
+.dark h3{color:#F5F1EA}
+p{font-size:16px;line-height:1.6;margin:0 0 14px}
+.lead{font-size:19px;line-height:1.55}
+.small{font-size:13px;line-height:1.55;color:var(--muted)}
+.dark .small{color:#9AA79F}
+.rule{width:56px;height:2px;background:#B08D57;margin:18px 0}
+
+/* cover */
+.cover{position:relative;padding:0;background:var(--ink)}
+.cover .hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,24,.35) 0%,rgba(20,28,24,.15) 35%,rgba(20,28,24,.88) 78%,rgba(20,28,24,.96) 100%)}
+.cover .inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+.cover h1{color:#F5F1EA}
+.cover .client{font-size:20px;line-height:1.45;color:#EDE7DC;margin:14px 0 18px}
+.cover .meta{font-size:13px;color:#C9D2CC;letter-spacing:.04em}
+.swipe-hint{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-light)}
+
+/* photos */
+.photo{width:100%;border-radius:6px;object-fit:cover;background:#ddd}
+.ph-wide{aspect-ratio:3/2}
+.ph-pano{aspect-ratio:21/10}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.grid2 .photo{aspect-ratio:1/1}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.45}
+.dark figcaption{color:#9AA79F}
+
+/* glance cards */
+.units{display:grid;gap:12px}
+.ucard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.ucard .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ucard .name{font-size:17px;font-weight:500;color:var(--ink)}
+.ucard .tag{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.ucard .detail{font-size:14px;color:var(--body);margin-top:4px}
+.ucard .price{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:500;color:var(--ink);margin-top:6px}
+.ucard .price small{font-family:'Jost',sans-serif;font-size:13px;color:var(--muted);font-weight:300}
+
+/* privileges */
+.cards{display:grid;gap:12px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px}
+.card .kicker{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:8px}
+.card p{font-size:15px;margin:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px}
+.stat .big{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;line-height:1.05;font-weight:500;color:var(--ink);margin-bottom:6px}
+.stat p{font-size:13.5px;line-height:1.45;margin:0}
+.fac{display:grid;gap:18px;margin-top:18px}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+th{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);text-align:left;padding:0 10px 10px 0;border-bottom:2px solid #B08D57}
+td{font-size:14.5px;padding:12px 10px 12px 0;border-bottom:1px solid #D6CCBA;vertical-align:top;line-height:1.45}
+td b{font-weight:500;color:var(--ink)}
+td.num,th.num{text-align:right;padding-right:0;white-space:nowrap}
+
+/* unit pages */
+.pricebox{background:var(--ink);color:var(--on-dark);border-radius:6px;padding:20px;margin:4px 0 16px}
+.pricebox .eyebrow{color:var(--brass-light);margin-bottom:6px}
+.pricebox .amount{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;line-height:1;font-weight:500;color:#F5F1EA}
+.pricebox .per{font-size:15px;color:#E7E1D6;margin-top:6px}
+.pricebox .small{margin-top:10px;margin-bottom:0;color:#A9B5AD}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin:22px 0}
+.spec .label{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:2px}
+.spec .value{font-size:16px;color:var(--ink);font-weight:400;line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px}
+.chip{font-size:13.5px;font-weight:400;color:var(--body);border:1px solid #CDBFA6;border-radius:6px;padding:6px 12px;background:var(--card)}
+.plan{display:block;background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;text-decoration:none}
+.plan img{margin:0 auto;max-height:520px;width:auto}
+.plan span{display:block;text-align:center;font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:.06em}
+.note{font-size:12.5px;color:var(--muted);line-height:1.55;margin-top:12px}
+
+/* golden */
+.gold{background:linear-gradient(160deg,#1F2A24 0%,#2A382F 100%)}
+.gold .card{background:rgba(245,241,234,.06);border-color:rgba(201,166,107,.35)}
+.gold .card p{color:var(--on-dark)}
+.gold .card .kicker{color:var(--brass-light)}
+.gold table th{color:var(--brass-light);border-bottom-color:#B08D57}
+.gold table td{color:var(--on-dark);border-bottom-color:rgba(201,210,204,.18)}
+.gold table td b{color:#F5F1EA}
+.gold .hl td{background:rgba(201,166,107,.12)}
+
+/* closing */
+.contact{display:grid;gap:12px;margin-top:22px}
+.contact a{display:block;text-decoration:none;border:1px solid rgba(201,166,107,.5);border-radius:6px;padding:14px 16px;color:#F5F1EA}
+.contact .label{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);margin-bottom:4px}
+.contact .value{font-size:20px;font-weight:400}
+
+/* pager */
+.pager{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(31,42,36,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.pager button{font:inherit;font-size:14px;font-weight:400;letter-spacing:.04em;color:#F5F1EA;background:transparent;border:1px solid rgba(245,241,234,.35);border-radius:6px;padding:9px 14px;cursor:pointer;min-width:84px}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager .where{text-align:center;color:#C9D2CC;font-size:12px;letter-spacing:.06em;line-height:1.35;flex:1;min-width:0}
+.pager .where b{display:block;font-weight:500;color:#F5F1EA;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:5px}
+.dots i{width:5px;height:5px;border-radius:50%;background:rgba(245,241,234,.3)}
+.dots i.on{background:var(--brass-light)}
+
+@media (min-width:760px){
+  .bar{padding-left:28px;padding-right:28px}
+  .bar .brand{font-size:14px}
+  .inner{padding:0 32px}
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .cards{grid-template-columns:1fr 1fr 1fr}
+  .fac{grid-template-columns:1fr 1fr}
+  .units{grid-template-columns:1fr 1fr}
+  p{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand"><b>Nexspace Realty</b>Exclusive at Romm Convent</div>
+  <a class="line-btn" href="https://line.me/R/ti/p/@nexspace" target="_blank" rel="noopener">LINE @nexspace</a>
+</header>
+
+<main class="book" id="book">
+
+<!-- 1 cover -->
+<article class="page cover" data-title="Welcome">
+  <img class="hero" src="sky-retreat.jpg" alt="Romm Convent Sky Retreat with infinity pool and gardens above Silom at dusk">
+  <div class="shade"></div>
+  <div class="inner">
+    <p class="eyebrow" style="color:#C9A66B">Private selection · 24 November 2026</p>
+    <h1>Romm Convent</h1>
+    <p class="client">Two rentals and two freehold resale residences, chosen for Mr. Eric Zijdenbos</p>
+    <p class="meta">42 Convent Road, Silom, Bangkok</p>
+    <span class="swipe-hint">Swipe to turn the page →</span>
+  </div>
+</article>
+
+<!-- 2 glance -->
+<article class="page" data-title="Your shortlist">
+  <div class="inner">
+    <p class="eyebrow">Your shortlist</p>
+    <h2>Four residences at a glance</h2>
+    <div class="units">
+      <a class="ucard" href="#rental-a"><div class="top"><span class="name">Rental A · 24th floor</span><span class="tag">Rent</span></div>
+        <div class="detail">2 bedrooms plus · 118 sqm · fully furnished</div>
+        <div class="price">150,000 <small>THB / month</small></div></a>
+      <a class="ucard" href="#rental-b"><div class="top"><span class="name">Rental B · 9th floor</span><span class="tag">Rent</span></div>
+        <div class="detail">2 bedrooms · 85 sqm · fully furnished</div>
+        <div class="price">120,000 <small>THB / month</small></div></a>
+      <a class="ucard" href="#unit-1701"><div class="top"><span class="name">Unit 1701 · 17th floor</span><span class="tag">Resale</span></div>
+        <div class="detail">2 bed · 2 bath · 85 sqm · west · freehold</div>
+        <div class="price">22,700,000 <small>THB</small></div></a>
+      <a class="ucard" href="#unit-1902"><div class="top"><span class="name">Unit 1902 · 19th floor</span><span class="tag">Resale</span></div>
+        <div class="detail">2 bed · 2 bath · 96 sqm · east · freehold</div>
+        <div class="price">26,900,000 <small>THB</small></div></a>
+    </div>
+    <p class="note">Tap a residence to jump to its page. Prices and availability as of 24 November 2026, subject to owner confirmation.</p>
+  </div>
+</article>
+
+<!-- 3 why -->
+<article class="page dark" data-title="Why Romm Convent">
+  <div class="inner">
+    <p class="eyebrow">Why Romm Convent</p>
+    <h2>Wellness living, directly opposite BNH Hospital</h2>
+    <p class="lead">A freehold address on Convent Road, the quiet link between Silom and Sathorn, built by Proud Real Estate around one idea: Live-Well-Life.</p>
+    <div class="rule"></div>
+    <figure>
+      <img class="photo" src="lobby-fitlab.jpg" alt="Double-height FitLab Café lounge opening onto the garden, with BNH Hospital visible beyond" style="aspect-ratio:5/4" loading="lazy">
+      <figcaption>The ground-floor FitLab Café lounge opens onto the garden, with BNH Hospital just across the road.</figcaption>
+    </figure>
+  </div>
+</article>
+
+<!-- 4 healthcare -->
+<article class="page" data-title="Privilege · Healthcare">
+  <div class="inner">
+    <p class="eyebrow">Privilege 01 · Healthcare</p>
+    <h2>Healthcare built into the address</h2>
+    <img class="photo ph-pano" src="pool.jpg" alt="Sky Retreat pool with water feature and daybeds" loading="lazy">
+    <div class="cards">
+      <div class="card"><p class="kicker">24-hour care</p><h3>Hybrid healthcare with BDMS</h3>
+        <p>Proud Real Estate partnered with BeDee by BDMS and BNH Hospital to provide 24-hour hybrid healthcare for residents, online and on-site at Romm Convent and BNH.</p></div>
+      <div class="card"><p class="kicker">Across the street</p><h3>BNH Hospital, about 100 m</h3>
+        <p>One of Bangkok’s best-known international hospitals sits directly opposite, so check-ups and follow-up visits are a short walk away.</p></div>
+      <div class="card"><p class="kicker">Sky Retreat</p><h3>Hydrotherapy and recovery</h3>
+        <p>A 25-metre pool with a hydrotherapy system, jacuzzi, family onsen and treatment room, meditation pod and wellness studio on the top floors.</p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 5 building -->
+<article class="page sand" data-title="Privilege · The building">
+  <div class="inner">
+    <p class="eyebrow">Privilege 02 · The building</p>
+    <h2>A building of few, in the heart of the CBD</h2>
+    <div class="stats">
+      <div class="stat"><div class="big">180</div><p>residences on 32 floors, at most 8 per floor</p></div>
+      <div class="stat"><div class="big">110%</div><p>automated basement parking, 198 bays for 180 units</p></div>
+      <div class="stat"><div class="big">3 floors</div><p>of Sky Retreat facilities on levels 30 to 32</p></div>
+      <div class="stat"><div class="big">≈ 560 m</div><p>to BTS Sala Daeng; MRT Silom about 830 m</p></div>
+      <div class="stat"><div class="big">Freehold</div><p>foreigners may own within the 49% quota</p></div>
+      <div class="stat"><div class="big">Proud</div><p>SET-listed developer of InterContinental Residences Hua Hin</p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 6 facilities -->
+<article class="page" data-title="Privilege · Facilities">
+  <div class="inner">
+    <p class="eyebrow">Privilege 03 · Facilities</p>
+    <h2>Resort facilities, floor by floor</h2>
+    <div class="fac">
+      <figure><img class="photo ph-wide" src="gym.jpg" alt="Gym with Technogym equipment and city views" loading="lazy"><figcaption><b>Gym</b> · 30th floor, Technogym equipment with city views</figcaption></figure>
+      <figure><img class="photo ph-wide" src="wellness-studio.jpg" alt="Wellness studio with Pilates reformer and yoga mats" loading="lazy"><figcaption><b>Wellness studio</b> · 31st floor, Pilates and yoga</figcaption></figure>
+      <figure><img class="photo ph-wide" src="sky-lounge.jpg" alt="Sky lounge with central olive tree and lounge seating" loading="lazy"><figcaption><b>Sky lounge</b> · 32nd floor</figcaption></figure>
+      <figure><img class="photo ph-wide" src="co-working.jpg" alt="Wood-panelled co-working lounge with indoor tree" loading="lazy"><figcaption><b>Co-working space</b> · ground floor, beside the FitLab Café</figcaption></figure>
+      <figure><img class="photo ph-wide" src="sensory-playground.jpg" alt="Rooftop sensory playground with soft play surfaces" loading="lazy"><figcaption><b>Sensory playground</b> · 32nd floor, for visiting family</figcaption></figure>
+      <figure><img class="photo ph-wide" src="pool.jpg" alt="Pool deck with daybeds beneath timber columns" loading="lazy"><figcaption><b>Swimming pool</b> · 30th floor, 25 m with hydrotherapy</figcaption></figure>
+    </div>
+    <table style="margin-top:26px">
+      <tr><th>Level</th><th>Facilities</th></tr>
+      <tr><td><b>Ground</b></td><td>Lobby, FitLab Café and co-working space, sensory garden</td></tr>
+      <tr><td><b>2nd</b></td><td>Wellness lounge, teens club with music and study rooms</td></tr>
+      <tr><td><b>30th</b></td><td>25-metre pool with hydrotherapy, kids’ pool, jacuzzi, gym</td></tr>
+      <tr><td><b>31st</b></td><td>Wellness studio, meditation pod, onsen and treatment room</td></tr>
+      <tr><td><b>32nd &amp; roof</b></td><td>Sky lounge, sensory playground; rooftop garden and BBQ yard</td></tr>
+    </table>
+    <p class="note">Facility photos courtesy of the developer, Proud Real Estate.</p>
+  </div>
+</article>
+
+<!-- 7 rental A -->
+<article class="page" id="rental-a" data-title="Rental A · 24th floor">
+  <div class="inner">
+    <p class="eyebrow">For rent · Rental A · 24th floor</p>
+    <h2>2 bedrooms plus, 118 sqm</h2>
+    <div class="pricebox">
+      <p class="eyebrow">Monthly rent</p>
+      <div class="amount">150,000 THB</div>
+      <div class="per">per month · fully furnished</div>
+      <p class="small">About 1,271 THB per sqm · as of 24 November 2026</p>
+    </div>
+    <img class="photo ph-wide" src="rental-a-living.jpg" alt="Furnished living room with balcony and city view" loading="lazy">
+    <div class="grid2">
+      <img class="photo" src="rental-a-bedroom-view.jpg" alt="Bedroom with corner floor-to-ceiling windows" loading="lazy">
+      <img class="photo" src="rental-a-master-bedroom.jpg" alt="Master bedroom with sideboard and king bed" loading="lazy">
+    </div>
+    <div class="specs">
+      <div class="spec"><div class="label">Size</div><div class="value">118 sqm</div></div>
+      <div class="spec"><div class="label">Layout</div><div class="value">2 bedrooms plus</div></div>
+      <div class="spec"><div class="label">Floor</div><div class="value">24th</div></div>
+      <div class="spec"><div class="label">Furnishing</div><div class="value">Fully furnished</div></div>
+    </div>
+    <h3>Included</h3>
+    <div class="chips"><span class="chip">Television</span><span class="chip">Air-conditioning</span><span class="chip">Oven</span><span class="chip">Refrigerator</span><span class="chip">Water heater</span><span class="chip">Washer and dryer</span></div>
+    <h3>Floor plan C11</h3>
+    <a class="plan" href="plan-c11.jpg" target="_blank" rel="noopener"><img src="plan-c11.jpg" alt="Floor plan C11, 117.37 sqm" loading="lazy"><span>Tap to enlarge</span></a>
+  </div>
+</article>
+
+<!-- 8 rental B -->
+<article class="page" id="rental-b" data-title="Rental B · 9th floor">
+  <div class="inner">
+    <p class="eyebrow">For rent · Rental B · 9th floor</p>
+    <h2>2 bedrooms, 85 sqm</h2>
+    <div class="pricebox">
+      <p class="eyebrow">Monthly rent</p>
+      <div class="amount">120,000 THB</div>
+      <div class="per">per month · fully furnished</div>
+      <p class="small">About 1,412 THB per sqm · as of 24 November 2026</p>
+    </div>
+    <img class="photo ph-wide" src="rental-b-living.jpg" alt="Furnished living room with city view" loading="lazy">
+    <img class="photo ph-wide" src="rental-b-bedroom.jpg" alt="Bedroom with floor-to-ceiling window and city view" style="margin-top:10px" loading="lazy">
+    <div class="specs">
+      <div class="spec"><div class="label">Size</div><div class="value">85 sqm</div></div>
+      <div class="spec"><div class="label">Layout</div><div class="value">2 bedrooms</div></div>
+      <div class="spec"><div class="label">Floor</div><div class="value">9th</div></div>
+      <div class="spec"><div class="label">Furnishing</div><div class="value">Fully furnished</div></div>
+    </div>
+    <h3>Included</h3>
+    <div class="chips"><span class="chip">Television</span><span class="chip">Air-conditioning</span><span class="chip">Oven</span><span class="chip">Refrigerator</span><span class="chip">Water heater</span><span class="chip">Washing machine</span></div>
+    <h3>Floor plan C1</h3>
+    <a class="plan" href="plan-c1.jpg" target="_blank" rel="noopener"><img src="plan-c1.jpg" alt="Floor plan C1, 84.81 sqm" loading="lazy"><span>Tap to enlarge</span></a>
+  </div>
+</article>
+
+<!-- 9 golden opportunity -->
+<article class="page dark gold" data-title="Resale · A golden opportunity">
+  <div class="inner">
+    <p class="eyebrow">For resale</p>
+    <h2>A golden opportunity before resale prices reach market level</h2>
+    <p class="lead">Both residences are offered by their owners at today’s prices, in a completed, freehold building where you can see exactly what you buy.</p>
+    <table>
+      <tr><th>Residence</th><th class="num">Size</th><th class="num">THB / sqm</th></tr>
+      <tr class="hl"><td><b>Unit 1701</b><br>22,700,000 THB</td><td class="num">85 sqm</td><td class="num"><b>≈ 267,059</b></td></tr>
+      <tr><td>Similar 2-bed listing<br>23,300,000 THB</td><td class="num">85.51 sqm</td><td class="num">≈ 272,483</td></tr>
+      <tr class="hl"><td><b>Unit 1902</b><br>26,900,000 THB</td><td class="num">96 sqm</td><td class="num"><b>≈ 280,208</b></td></tr>
+      <tr><td>2-bed corner listing<br>36,480,000 THB</td><td class="num">128.72 sqm</td><td class="num">≈ 283,406</td></tr>
+    </table>
+    <div class="cards">
+      <div class="card"><p class="kicker">Value</p><p>Unit 1701 is priced below a comparable 85.51 sqm two-bedroom listed in the same building.</p></div>
+      <div class="card"><p class="kicker">Certainty</p><p>The building is complete. No construction wait and no off-plan risk.</p></div>
+      <div class="card"><p class="kicker">Ownership</p><p>Freehold title, open to foreign buyers within the 49% foreign quota.</p></div>
+    </div>
+    <p class="note" style="color:#9AA79F">Comparisons use public asking prices for other Romm Convent units on DDproperty, seen 24 November 2026. They are not a valuation or a promise of future prices.</p>
+  </div>
+</article>
+
+<!-- 10 unit 1701 -->
+<article class="page" id="unit-1701" data-title="Unit 1701 · 17th floor">
+  <div class="inner">
+    <p class="eyebrow">For resale · Unit 1701 · 17th floor</p>
+    <h2>2 bedrooms, 2 bathrooms, 85 sqm facing west</h2>
+    <div class="pricebox">
+      <p class="eyebrow">Resale price</p>
+      <div class="amount">22,700,000 THB</div>
+      <div class="per">Freehold · unfurnished, fully fitted</div>
+      <p class="small">About 267,059 THB per sqm · as of 24 November 2026</p>
+    </div>
+    <div class="specs">
+      <div class="spec"><div class="label">Size</div><div class="value">85 sqm</div></div>
+      <div class="spec"><div class="label">Floor &amp; view</div><div class="value">17th, facing west</div></div>
+      <div class="spec"><div class="label">Layout</div><div class="value">2 bedrooms, 2 bathrooms</div></div>
+      <div class="spec"><div class="label">Title</div><div class="value">Freehold</div></div>
+    </div>
+    <h3>Developer fittings</h3>
+    <div class="chips"><span class="chip">Hybrid engineered floor</span><span class="chip">Mitsubishi air-conditioning</span><span class="chip">Gorenje oven</span><span class="chip">Gorenje electric stove and hood</span><span class="chip">Water heater</span><span class="chip">Bathtub</span></div>
+    <h3>Floor plan C1</h3>
+    <a class="plan" href="plan-c1.jpg" target="_blank" rel="noopener"><img src="plan-c1.jpg" alt="Floor plan C1, 84.81 sqm" loading="lazy"><span>Tap to enlarge</span></a>
+    <figure style="margin-top:18px">
+      <img class="photo ph-wide" src="finish-living.jpg" alt="Unfurnished room with engineered wood floor and city view" loading="lazy">
+      <figcaption>Representative handover finish, photographed in Unit 2101. Views from Unit 1701 differ.</figcaption>
+    </figure>
+  </div>
+</article>
+
+<!-- 11 unit 1902 -->
+<article class="page" id="unit-1902" data-title="Unit 1902 · 19th floor">
+  <div class="inner">
+    <p class="eyebrow">For resale · Unit 1902 · 19th floor</p>
+    <h2>2 bedrooms, 2 bathrooms, 96 sqm facing east</h2>
+    <div class="pricebox">
+      <p class="eyebrow">Resale price</p>
+      <div class="amount">26,900,000 THB</div>
+      <div class="per">Freehold</div>
+      <p class="small">About 280,208 THB per sqm · as of 24 November 2026</p>
+    </div>
+    <div class="specs">
+      <div class="spec"><div class="label">Size</div><div class="value">96 sqm</div></div>
+      <div class="spec"><div class="label">Floor &amp; view</div><div class="value">19th, facing east</div></div>
+      <div class="spec"><div class="label">Layout</div><div class="value">2 bedrooms, 2 bathrooms</div></div>
+      <div class="spec"><div class="label">Title</div><div class="value">Freehold</div></div>
+    </div>
+    <h3>Compared with Unit 1701</h3>
+    <div class="chips"><span class="chip">11 sqm more living space</span><span class="chip">Two floors higher</span><span class="chip">Morning sun, cooler afternoons</span></div>
+    <h3>Floor plan C6</h3>
+    <a class="plan" href="plan-c6.jpg" target="_blank" rel="noopener"><img src="plan-c6.jpg" alt="Floor plan C6, 96.95 sqm" loading="lazy"><span>Tap to enlarge</span></a>
+    <figure style="margin-top:18px">
+      <img class="photo ph-wide" src="finish-corner-room.jpg" alt="Unfurnished corner room with full-height windows and city view" loading="lazy">
+      <figcaption>Representative handover finish, photographed in Unit 2101. Views from Unit 1902 differ.</figcaption>
+    </figure>
+  </div>
+</article>
+
+<!-- 12 closing -->
+<article class="page dark" data-title="Until February">
+  <div class="inner">
+    <p class="eyebrow">Until February 2027</p>
+    <h2>Wishing you a smooth surgery and recovery, Eric.</h2>
+    <p class="lead">While you are in London, we will keep you updated on availability and pricing for these residences. When you are back in Bangkok, we will arrange second viewings at a time that suits you.</p>
+    <img class="photo ph-wide" src="sky-lounge.jpg" alt="Sky lounge at Romm Convent" style="margin-top:8px" loading="lazy">
+    <div class="contact">
+      <a href="https://line.me/R/ti/p/@nexspace" target="_blank" rel="noopener"><div class="label">Message us on LINE</div><div class="value">@nexspace</div></a>
+    </div>
+    <p class="small" style="margin-top:18px">Nexspace Realty Exclusive at Romm Convent</p>
+  </div>
+</article>
+
+</main>
+
+<nav class="pager" aria-label="Page navigation">
+  <button id="prev" type="button" aria-label="Previous page">← Back</button>
+  <div class="where"><b id="ptitle">Welcome</b><span id="pnum">1 / 12</span><div class="dots" id="dots"></div></div>
+  <button id="next" type="button" aria-label="Next page">Next →</button>
+</nav>
+
+<script>
+(function(){
+  var book=document.getElementById('book');
+  var pages=[].slice.call(book.querySelectorAll('.page'));
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
+  var ptitle=document.getElementById('ptitle'), pnum=document.getElementById('pnum'), dots=document.getElementById('dots');
+  pages.forEach(function(){dots.appendChild(document.createElement('i'));});
+  var cur=0;
+  function go(i){
+    i=Math.max(0,Math.min(pages.length-1,i));
+    book.scrollTo({left:i*book.clientWidth,behavior:'smooth'});
+  }
+  function update(){
+    var i=Math.round(book.scrollLeft/book.clientWidth);
+    if(i<0)i=0; if(i>pages.length-1)i=pages.length-1;
+    cur=i;
+    ptitle.textContent=pages[i].getAttribute('data-title')||'';
+    pnum.textContent=(i+1)+' / '+pages.length;
+    prev.disabled=i===0; next.disabled=i===pages.length-1;
+    [].forEach.call(dots.children,function(d,k){d.className=k===i?'on':'';});
+  }
+  var t; book.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(update,60);},{passive:true});
+  prev.addEventListener('click',function(){go(cur-1);});
+  next.addEventListener('click',function(){go(cur+1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){go(cur+1);e.preventDefault();}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){go(cur-1);e.preventDefault();}
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var el=document.getElementById(a.getAttribute('href').slice(1));
+      if(el){e.preventDefault();go(pages.indexOf(el));}
+    });
+  });
+  window.addEventListener('resize',function(){book.scrollLeft=cur*book.clientWidth;});
+  if(location.hash){var el=document.getElementById(location.hash.slice(1)); if(el){cur=pages.indexOf(el);book.scrollLeft=cur*book.clientWidth;}}
+  update();
+})();
+</script>
+</body>
+</html>
